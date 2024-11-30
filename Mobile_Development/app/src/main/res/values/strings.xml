@@ -1,7 +1,19 @@
 <resources>
     <string name="app_name">Let Me Cook</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Favorite</string>
-    <string name="title_notifications">Stock</string>
+    <string name="title_recipe">Recipe</string>
+    <string name="title_stock">Stock</string>
     <string name="title_profile">Profile</string>
+
+    <string name="btn_setting">Setting</string>
+    <string name="btn_editProfile">Edit Profile</string>
+    <string name="btn_notification">Notification</string>
+    <string name="btn_search">Search</string>
+    <string name="btm_logOut">Log Out</string>
+    <string name="Btn_deleteAccount">Delete Account</string>
+    <string name="btn_darkMode">Turn Dark Mode</string>
+    
+    <string name="profile_name">Your Name</string>
+    <string name="profile_email">Your E-mail</string>
+    <string name="profile_motivation">Your Motivation</string>
 </resources>
