@@ -12,16 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_recipe"
-        android:name="com.bangkit.letmecook.ui.recipe.RecipeFragment"
-        android:label="@string/title_recipe"
-        tools:layout="@layout/fragment_recipe" />
+        android:id="@+id/navigation_dashboard"
+        android:name="com.bangkit.letmecook.ui.dashboard.DashboardFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_stock"
-        android:name="com.bangkit.letmecook.ui.stock.StockFragment"
-        android:label="@string/title_stock"
-        tools:layout="@layout/fragment_stock" />
+        android:id="@+id/navigation_notifications"
+        android:name="com.bangkit.letmecook.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/navigation_profile"

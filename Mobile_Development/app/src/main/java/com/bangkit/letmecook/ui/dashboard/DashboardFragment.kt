@@ -1,4 +1,4 @@
-package com.bangkit.letmecook.ui.recipe
+package com.bangkit.letmecook.ui.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.bangkit.letmecook.databinding.FragmentRecipeBinding
+import com.bangkit.letmecook.databinding.FragmentDashboardBinding
 
-class RecipeFragment : Fragment() {
+class DashboardFragment : Fragment() {
 
-    private var _binding: FragmentRecipeBinding? = null
+    private var _binding: FragmentDashboardBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,9 +23,9 @@ class RecipeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val dashboardViewModel =
-            ViewModelProvider(this).get(RecipeViewModel::class.java)
+            ViewModelProvider(this).get(DashboardViewModel::class.java)
 
-        _binding = FragmentRecipeBinding.inflate(inflater, container, false)
+        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textDashboard
