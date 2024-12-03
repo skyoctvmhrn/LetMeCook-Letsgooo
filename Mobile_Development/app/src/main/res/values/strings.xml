@@ -24,8 +24,10 @@
     <string name="txt_emptyState">It Looks Like There\'s Still Nothing</string>
     <string name="txt_loadingState">Loading . . . .</string>
     <string name="txt_errorState">Oh No, Something Went Wrong</string>
-    
+
     <string name="profile_name">Your Name</string>
     <string name="profile_email">Your E-mail</string>
     <string name="profile_motivation">Your Motivation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
