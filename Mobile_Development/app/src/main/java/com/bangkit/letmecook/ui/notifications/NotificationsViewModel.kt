@@ -1,13 +1,13 @@
-package com.bangkit.letmecook.ui.stock
+package com.bangkit.letmecook.ui.notifications
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class FavoriteViewModel : ViewModel() {
+class NotificationsViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is stock Fragment"
+        value = "This is notifications Fragment"
     }
     val text: LiveData<String> = _text
 }

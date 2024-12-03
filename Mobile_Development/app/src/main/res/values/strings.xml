@@ -1,33 +1,7 @@
 <resources>
     <string name="app_name">Let Me Cook</string>
     <string name="title_home">Home</string>
-    <string name="title_recipe">Recipe</string>
-    <string name="title_stock">Stock</string>
+    <string name="title_dashboard">Favorite</string>
+    <string name="title_notifications">Stock</string>
     <string name="title_profile">Profile</string>
-
-    <string name="btn_setting">Setting</string>
-    <string name="btn_editProfile">Edit Profile</string>
-    <string name="btn_notification">Notification</string>
-    <string name="btn_search">Search</string>
-    <string name="btn_logOut">Log Out</string>
-    <string name="Btn_deleteAccount">Delete Account</string>
-    <string name="btn_darkMode">Turn Dark Mode</string>
-    <string name="btn_addStock">Add Stock</string>
-    <string name="btn_editStock">Edit Stock</string>
-
-    <string name="txt_myStock">My Stock</string>
-    <string name="txt_nameStock">Name Stock</string>
-    <string name="txt_inStock">In Stock :</string>
-    <string name="txt_amountStock">Amount Stock</string>
-    <string name="txt_expiredStock">Expired Stock</string>
-    <string name="txt_notFoundState">Sorry, We Can\'t Find</string>
-    <string name="txt_emptyState">It Looks Like There\'s Still Nothing</string>
-    <string name="txt_loadingState">Loading . . . .</string>
-    <string name="txt_errorState">Oh No, Something Went Wrong</string>
-
-    <string name="profile_name">Your Name</string>
-    <string name="profile_email">Your E-mail</string>
-    <string name="profile_motivation">Your Motivation</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
