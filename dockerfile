@@ -13,7 +13,7 @@ COPY . /app/
 # Install dependencies dari requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-ENV PORT=3000
+ENV PORT=8000
 
 # Buka port 8000
 EXPOSE 8000
