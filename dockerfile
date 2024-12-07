@@ -1,18 +1,18 @@
-# Use official Python image as base
-FROM python:3.9-slim
+# Gunakan Python 3 sebagai base image
+FROM python:3.11.7-bullseye
 
-# Set working directory
+# Tetapkan working directory di dalam container
 WORKDIR /app
 
-# Copy requirements.txt and install dependencies
-COPY requirements.txt .
+# Salin file requirements.txt dan semua file proyek ke container
+COPY requirements.txt /app/
+COPY . /app/
+
+# Install dependencies dari requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY . .
-
-# Expose port 8000
+# Buka port 8000
 EXPOSE 8000
 
-# Start the server
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]  # For FastAPI
+# Jalankan aplikasi
+CMD ["python3", "main.py"]
