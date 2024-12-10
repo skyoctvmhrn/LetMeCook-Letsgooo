@@ -16,6 +16,11 @@ RUN npm install
 COPY . .
 
 ENV PORT=3000
+ENV JWT_SECRET=adjkfgjhdfjdfhdbfhdsdhbfhdv
+ENV DB_HOST=34.34.219.15
+ENV DB_NAME=letmecook
+ENV DB_USER=letmecook
+ENV DB_PASS=letmecook
 
 # Expose port yang digunakan oleh aplikasi
 EXPOSE 3000
