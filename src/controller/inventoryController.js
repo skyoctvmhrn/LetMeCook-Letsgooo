@@ -7,55 +7,58 @@ const validate = require('../utils/validate'); // Pastikan path benar
 
 // Ambil semua inventory beserta bahan
 exports.getAllInventory = async (req, res) => {
-    try {
-        const {user_id_user} = req.body; //kirim nama users
-        // Ambil semua inventory
-        const inventory = await Inventory.findAll({
-            attributes: [
-                'id_inventory',
-                'ingredient_id_ingredient', // Foreign key to ingredient
-                'stock',
-                'unit',
-                'expiry_date',
-                'place',
-                'user_id_user',
-            ],
-            where:{
-                user_id_user:user_id_user //sementara kayak gini
-            }
-        });
-        // Ambil daftar ingredient berdasarkan ingredient_id_ingredient yang ada di inventory
-        const ingredientIds = inventory.map(item => item.ingredient_id_ingredient);
-        const ingredients = await Ingredient.findAll({
-            where: {
-                ingredient_id: {
-                    [Op.in]: ingredientIds,  // Ambil hanya ingredient yang ada di inventory
-                }
-            },
-            attributes: ['ingredient_id', 'ingredient_name'],
-        });
+  try {
+      const user_id_user = req.params.user_id; // Ambil langsung user_id dari req.params
+      console.log(user_id_user); // Debugging untuk memastikan nilainya benar
 
-        // Format data inventory dan ingredients dalam satu array
-        const formattedData = inventory.map(item => {
-            const ingredient = ingredients.find(ing => ing.ingredient_id === item.ingredient_id_ingredient);
+      // Ambil semua inventory
+      const inventory = await Inventory.findAll({
+          attributes: [
+              'id_inventory',
+              'ingredient_id_ingredient', // Foreign key to ingredient
+              'stock',
+              'unit',
+              'expiry_date',
+              'place',
+              'user_id_user',
+          ],
+          where: {
+              user_id_user: user_id_user, // Gunakan nilai user_id_user yang benar
+          },
+      });
 
-            return {
-                id_inventory: item.id_inventory,
-                ingredient_id:ingredient ? ingredient.ingredient_id : null, 
-                ingredient_name: ingredient ? ingredient.ingredient_name : null, 
-                user_id_user: item.user_id_user,
-                stock: item.stock,
-                unit: item.unit,
-                expiry_date: item.expiry_date,
-                place: item.place,
-            };
-        });
+      // Ambil daftar ingredient berdasarkan ingredient_id_ingredient yang ada di inventory
+      const ingredientIds = inventory.map(item => item.ingredient_id_ingredient);
+      const ingredients = await Ingredient.findAll({
+          where: {
+              ingredient_id: {
+                  [Op.in]: ingredientIds, // Ambil hanya ingredient yang ada di inventory
+              },
+          },
+          attributes: ['ingredient_id', 'ingredient_name'],
+      });
 
-        res.status(200).json(formattedData);
-    } catch (error) {
-        console.error('Error fetching inventory:', error);
-        res.status(500).json({ message: 'Internal server error' });
-    }
+      // Format data inventory dan ingredients dalam satu array
+      const formattedData = inventory.map(item => {
+          const ingredient = ingredients.find(ing => ing.ingredient_id === item.ingredient_id_ingredient);
+
+          return {
+              id_inventory: item.id_inventory,
+              ingredient_id: ingredient ? ingredient.ingredient_id : null,
+              ingredient_name: ingredient ? ingredient.ingredient_name : null,
+              user_id_user: item.user_id_user,
+              stock: item.stock,
+              unit: item.unit,
+              expiry_date: item.expiry_date,
+              place: item.place,
+          };
+      });
+
+      res.status(200).json(formattedData);
+  } catch (error) {
+      console.error('Error fetching inventory:', error);
+      res.status(500).json({ message: 'Internal server error' });
+  }
 };
 
 //Store inventory
